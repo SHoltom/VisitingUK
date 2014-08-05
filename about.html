@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<title>World-wide Demand for UK visits</title>
+<style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+		
+      }
+         body p {
+         
+     	text-align: justify;
+  		-webkit-hyphens: auto;
+  		-moz-hyphens: auto;
+  		-ms-hyphens: auto;
+  		 hyphens: auto;
+  		
+  		   font-family: "Helvetica Neue";
+  		     text-rendering: optimizeLegibility;
+}
+
+.row {
+        padding: 29px 14px;
+		margin-bottom: 12px;
+		background-color: #ffffff;
+		border: 1px solid #ffffff;
+		border-radius: 4px
+		
+      }
+	    
+
+
+	       
+.country:hover{
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+.text{
+  font-size:10px;
+  text-transform:capitalize;
+}
+
+#container {
+  margin:1px 1%;
+   margin-left: 60px;
+  height:100%;
+  overflow:hidden;
+  background: #e7f9ff;
+  width:67%;
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+ border-radius: 360px / 310px;
+ float:left;
+} 
+.hidden { 
+  display: none; 
+}
+div.tooltip {
+  color: #222; 
+  background: #fff; 
+  padding: .5em; 
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 2px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  opacity: 0.9; 
+  position: absolute;
+}
+
+                
+</style>
+
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen" />
+	
+<link rel="stylesheet" href="css/charts.css" media="screen" />
+	<link rel="stylesheet" href="css/dc.css" media="screen" />
+	<link rel="stylesheet" href="css/starter-template.css" media="screen" />
+	<link rel="stylesheet" href="css/d3_tip.css" media="screen" />
+<link rel="stylesheet" href="css/sh_stylesheet.css" media="screen" />
+
+
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">VistingUK</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h2>Exploring the world-wide demand for visiting UK</h2>
+        <p>First look at the concordance between the issued visas and the enquiries on visas. Globally, the <a href="https://www.gov.uk/government/organisations/uk-visas-and-immigration" target="_blank"> UKVI </a> offers a wide range of visas typically including those for tourism, family, work etc. 
+        The objective is to discover countries where there exists a discordance between the visa categories that customers enquire about and the visas that are issued before a passenger enters the UK.  
+        The hypothesis is that regions of discordance are regions that need better tailoring of visa services. 
+        
+        <br></br>The data on issued visas are derived from the <a href="http://www.ons.gov.uk/ons/about-ons/get-involved/taking-part-in-a-survey/information-for-households/a-to-z-of-household-and-individual-surveys/international-passenger-survey/index.html"> International Passenger Survey (IPS) </a> 2012-2013. 
+        While, the information on enquiries is sourced from the <a href="http://www.google.com/analytics/"> Google Analytics </a> data from the <a href="https://www.gov.uk/check-uk-visa" taget="_blank">Check if you need a UK visa </a> webpage.
+        </p>
+        
+        
+      <h4> Caveats </h4>
+      <p> The IPS data is a sample and as with any sample, the assumption is that the conclusions derived from it can be extrapolated to the general population. In addition, for the purposes of estimating the current demand for different visas, the reason for travel cited by the passenger, in the IPS is used as a surrogate for the visa category on which the passenger is travelling. 
+       Additionally, having begun in February 2014, the <a href="https://www.gov.uk/check-uk-visa" taget="_blank">Check if you need a UK visa </a> service is relatively new. Hence, the current information on enquiries is limited. A better picture around enquiries will undoubtedly emerge as more data become available. 
+        </p>
+        
+        <p>
+        </p>
+        </div>
+        
+         <div class="jumbotron">
+        <h4>A Data Story</h4>
+        <p> A leading benefit of an interactive visualisation is the ability to uncover patterns that may have otherwise been overlooked. Here, we present the example of Turkey as a region with potential for growth in the number of tourists to the UK. </p>
+        <p> Turkey, as noted from it's colour on the dual-scale choropleth map, is an area with high growth potential and comparatively lower current demand.</p>
+
+        <img src="Images/LocChart.jpg" alt="X-axis label" width="80%" height="60%" hspace="15">
+        <br></br>
+        <p> Looking at the next chart, the statistically significant, rank correlation suggests a good agreement between the current demand and the enquiries from Turkish citizens, across all visa categories.</p>
+	    <img src="Images/corrChart.jpg" alt="X-axis label" width="60%" height="60%" hspace="15">
+	    
+	  	<br></br>
+	     <p> However, on examining the popularity of different visa categories, we uncover a discordance that requires further investigation. 
+	     Amongst the 271 Turkish nationals surveyed through the IPS, a majority have cited work as their reason for travel. Assuming they have all been granted a work visa before travelling to the UK, it can be concluded that the work visa category is the most requested for in Turkey.  </p>
+	     
+	     
+	     <p>On the other hand, out of the 33 enquiries received, between Feb-May 2014, from Turkish nationals on the Check if you need a UK visa service webpage, a majority chose tourism as their intended reason for travel to the UK. This pattern would imply, that a growing number of Turkish nationals are considering UK as a holiday destination. Thus, this potential for growth in tourist numbers to the UK from Turkey can be harnessed favourably. However, since the number of enquiries is small, more data should be collected to establish this as a pattern over time.</p>
+	     <img src="Images/popChart.jpg" alt="X-axis label" width="100%" height="100%" hspace="15">
+	     
+	     <br></br>
+	     <p>The final two charts display the percentage of demand or enquiry broken down by visa category. The transition from the demand for work visas to an increase in interest in tourist visas is reflected in the figures shown in the charts below.</p>
+	     <img src="Images/demand.jpg" alt="X-axis label" width="80%" height="60%" hspace="25">
+	     
+	          <br></br>
+	     
+	    <img src="Images/enquiries.jpg" alt="X-axis label" width="80%" height="60%" hspace="25">
+	    
+	    <p>In conclusion, the current data suggests a potential for increasing the number of tourists arriving from Turkey. Further investigation on more extensive data is needed to establish whether this is a long-term pattern and if so, can measures be taken to harness this pattern favourably for the UK. </p>
+	    
+
+ 
+        
+   
+        </div>
+        
+               
+         <div class="jumbotron">
+        <h4>Other Key Observations</h4>
+        
+        <p> 
+        <div class="list-inline">
+      	  <ul style="list-style-type:square">
+      	  	<li>Out of the 240 countries analysed, 8 of them have both high current demand and a high number of enquiries. These are Australia, Canada, China, Russia, India, Japan, Nigeria and USA.</li>
+			<li>Australia, which has a high demand and a high number of enquiries, does not have a significant correlation which implies that the enquiries do not match the reasons people cite for travel to the UK.</li>
+			<li>Brazilian nationals have shown an increasing interest in study visas. This is a shift from the current trend of visiting the UK primarily for tourism.</li>
+			<li>Some countries have a negative correlation between enquiries and demand for visas. While the relationship is not statistically significant, further investigation is recommended to establish the true pattern. A negative correlation would imply a serious discordance in the visa categories enquired about and applied for. Theoretically, it would also be possible to uncover loop holes in the visa services through in-depth investigation of enquries and demand anomalies.
+			</ul> 
+			</div>
+		</p>
+		        
+      
+        
+   
+        </div>
+        
+        
+           
+               
+   
+        
+         <div class="jumbotron">
+        <h4>Conclusion and Recommendation</h4>
+        <p> A joint examination of enquiry and demand is akin to an analysis of supply and demand. In the case of visas, such an analysis helps in understanding the broader picture of where more supply is needed and areas where better tailoring of services can be achieved. Through this short piece of analysis, regions of potential growth such as Turkey, have been uncovered.   
+        The key recommendation would be to repeat the analysis on data more specific to visa applications and more information regarding enquiries. Undoubtedly, there will be more interesting patterns to uncover that could provide invaluable guidance in drafting strategies around visas.
+        </p>
+        
+       
+ 
+        
+   
+        </div>
+        
+        
+
+
+</body>
+</html>

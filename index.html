@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<title>World-wide Demand for UK visits</title>
+<style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+		
+      }
+         body p {
+         
+     	text-align: justify;
+  		-webkit-hyphens: auto;
+  		-moz-hyphens: auto;
+  		-ms-hyphens: auto;
+  		 hyphens: auto;
+  		
+  		   font-family: "Helvetica Neue";
+  		     text-rendering: optimizeLegibility;
+}
+
+.row {
+        padding: 29px 14px;
+		margin-bottom: 12px;
+		background-color: #ffffff;
+		border: 1px solid #ffffff;
+		border-radius: 4px
+		
+      }
+	    
+
+
+	       
+.country:hover{
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+.text{
+  font-size:10px;
+  text-transform:capitalize;
+}
+
+#container {
+  margin:1px 1%;
+   margin-left: 60px;
+  height:100%;
+  overflow:hidden;
+  background: #e7f9ff;
+  width:67%;
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+ border-radius: 360px / 310px;
+ float:left;
+} 
+.hidden { 
+  display: none; 
+}
+div.tooltip {
+  color: #222; 
+  background: #fff; 
+  padding: .5em; 
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 2px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  opacity: 0.9; 
+  position: absolute;
+}
+.graticule {
+  fill: none;
+  stroke:#bbb;
+  stroke-width: .5px;
+  stroke-opacity: .3;
+}
+.equator {
+  stroke: #ccc;
+  stroke-width: 1px;
+  stroke-opacity: .2;
+}
+			
+#number-box,#number-box1,#number-box2,#number-box3,#number-box4,#number-box5,#number-box6,#number-box7,#number-box8,#number-box9,#number-box10,#number-box11,#number-box12,#number-box13,#number-box14,#number-box15 {
+    width: 100px;
+        font-size: 34px;
+        text-align: center;
+        padding-top: 13px;
+        margin-left: 3px;
+        padding-bottom: 63px;
+        
+        height:12px;
+}
+
+ #number-box {
+        background: #aec6cf;
+    margin-left: 60px;
+      
+        
+      }
+     	
+ #number-box1 {
+        background: #9ab973;
+      
+        
+      }
+     
+       #number-box2 {
+        background: #ffc87c;
+
+      
+        
+      }
+ #number-box3 {
+        background: #997a8d;
+        
+        
+      }
+      
+       #number-box4 {
+        background: #ed81a1;
+        
+        
+      }
+      
+     #number-box5 {
+        background: #c9594e ;
+       
+        
+      }
+      
+      
+      
+       #number-box6 {
+        background: #d172a5;
+         
+        
+      }
+      
+      
+       #number-box7 {
+        background: #93c4e1;
+        
+        
+      }  
+            
+        #number-box8 {
+        background: #aec6cf;
+    margin-left: 60px;
+      
+        
+      }
+     	
+ #number-box9 {
+        background: #9ab973;
+      
+        
+      }
+     
+       #number-box10 {
+        background: #ffc87c;
+
+      
+        
+      }
+ #number-box11 {
+        background: #997a8d;
+        
+        
+      }
+      
+       #number-box12 {
+        background: #ed81a1;
+        
+        
+      }
+      
+     #number-box13 {
+        background: #c9594e ;
+       
+        
+      }
+      
+      
+      
+       #number-box14 {
+        background: #d172a5;
+         
+        
+      }
+      
+      
+       #number-box15 {
+        background: #93c4e1;
+        
+        
+      }  
+      
+      .resetall{
+      color: #428bca;
+     
+       font-size: 14px;
+     font-family: inherit;
+  font-weight: 500;
+      }
+                
+</style>
+
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen" />
+	
+<link rel="stylesheet" href="css/charts.css" media="screen" />
+	<link rel="stylesheet" href="css/dc.css" media="screen" />
+	<link rel="stylesheet" href="css/starter-template.css" media="screen" />
+	<link rel="stylesheet" href="css/d3_tip.css" media="screen" />
+<link rel="stylesheet" href="css/sh_stylesheet.css" media="screen" />
+
+
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">VistingUK</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li ><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<div class="container">
+  
+<div class="row">
+   <h2>World-wide demand for visiting UK</h2>
+
+<p>
+	This dual scale choropleth map simultaneously visualizes the number of issued visas (i.e. <a href="http://www.ons.gov.uk/ons/rel/ott/travel-trends/2012/rpt-travel-trends--2012.html" target="_blank">demand</a>) vs the number of enquiries about visas (i.e.  <a href="https://www.gov.uk/check-uk-visa" target="_blank">growth potential</a>).
+	<br>One or more countries can be selected for sub analysis by clicking on them.
+</p>
+
+ <br>
+
+    <div id="container">
+      
+        <!--<a class="reset" href="javascript:usChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>-->
+        <!--<span class="reset" style="display: none;"> | Current filter: <span class="filter"></span></span>-->
+
+        <!--<div class="clearfix"></div>-->
+       
+    </div>
+       <span class="resetall" style="float: right;">
+        <a class="resetall" href="javascript:dc.filterAll(); dc.redrawAll();" style="float: right;margin-right:143px">Reset All</a>
+	</span>
+<div><br></br> </div>
+	
+ <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Images/matrix.png" alt="Color Key Matrix" width="17%" height="17%"></div>
+ <div><br></br> </div><div><br></br> </div><div><br></br> </div><div><br></br> </div>
+  <!-- <div class="col-md-7" id="industry-chart">
+<h4> Breakdown of demand by visa category</h4>
+<div id="charts">
+  <div id="round-chart" class="col-md-3">
+    <div class="title"></div>
+  </div>
+ </div>
+		</div>-->
+</div>		
+	<div class="row"  >
+ <h4>Figure 1: Correlation of categories for demand and growth</h4>
+
+  <span class="resetall" style="float: right;">
+        <a class="resetall" href="javascript:dc.filterAll(); dc.redrawAll();" style="float: right;margin-right:143px">Reset All</a>
+	</span>	 
+		<div class="col-md-12" style="margin-left:60px" id="corr-chart">
+			
+	     </div>
+	      <br></br>
+	       <div><span style="display:inline-block; width:100px;"></span><img src="Images/arrows.png" alt="X-axis label" width="50%" height="30%"></div>
+
+		<h6> This plot shows the correlation between the frequency of categories for issued visas (i.e. demand) vs visa enquiries (i.e. the reasons for demand). Countries with a high correlation are examples where the categories of enquiries and the categories of visas issued show a similar pattern, which may represent a successful and well-tailored service.Countries with a low correlation are examples where the frequencies of enquiry categories do not match those of the visas issued. These countries could represent potential growth areas for tourism, or highlight potential service or support issues. Countries can be selected by clicking on the dots. Hover over the dots to view the correlation and p-values. The orange dots highlight the countries with a statistically significant correlation between demand and enquiries. </h6>
+		
+		</div>
+		
+
+<div class="row">
+ <h4>Figure 2: Most popular categories for issued visas and visa enquiries </h4>
+  <span class="resetall" style="float: right;">
+        <a class="resetall" href="javascript:dc.filterAll(); dc.redrawAll();" style="float: right;margin-right:143px">Reset All</a>
+	</span>
+	
+	<span style="display:inline-block; width:78px;"> </span><h51>  A) Demand by visa category</h51> <span style="display:inline-block; width:268px;"></span><h51> <h51> B) Enquiries by visa category </h51>
+		
+		 	<br> 
+	<div class="col-md-5"  style="margin-left:60px" id="industry-chart">
+
+	
+	</div>
+
+	
+	<div class="col-md-6" id="industry1-chart">
+	
+	</div>
+ 	 <span style="display:block; height: 15px;"></span>
+	<h6> These charts show how many times each category was chosen as the number 1 reason for issued visas (A) and visa enquiries (B) for the countries selected. Click on a category bar to only show the countries which rank that category as the most popular.</h6>
+	
+</div>
+
+<div class="row">
+ <h4>Figure 2A: Relative frequency of categories for issued visas </h4>
+
+	<!--	<div class="col-md-12" style="margin-left:60px" id="work-chart"></div>-->
+<div id="number-box"></div>
+<div id="number-box1"></div>
+<div id="number-box2"></div>
+<div id="number-box3"></div>
+<div id="number-box4"></div>
+<div id="number-box5"></div>
+<div id="number-box6"></div>
+<div id="number-box7"></div>
+
+
+<br>
+<br>
+<br>
+<br>
+<h9 style="margin-right:10px;margin-left:80px;"> Work  &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;Tourism &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Family&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Study &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Marriage &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Sport&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Transit&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Medical</h9>
+
+		<h6> These charts show the percentage  of each category for issued visas for the countries selected.</h6>
+		
+		
+		
+</div>
+
+
+<div class="row">
+ <h4>Figure 2B: Relative frequency of categories for visa enquiries </h4>
+
+	<!--	<div class="col-md-12" style="margin-left:60px" id="work-chart"></div>-->
+<div id="number-box8"></div>
+<div id="number-box9"></div>
+<div id="number-box10"></div>
+<div id="number-box11"></div>
+<div id="number-box12"></div>
+<div id="number-box13"></div>
+<div id="number-box14"></div>
+<div id="number-box15"></div>
+
+
+<br>
+<br>
+<br>
+<br>
+<h9 style="margin-right:10px;margin-left:80px;"> Work  &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;Tourism &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Family&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Study &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Marriage &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Sport&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Transit&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Medical</h9>
+
+		<h6> These charts show the percentage  of each category for visa enquiries for the countries selected.</h6>
+		
+		
+		
+</div>
+
+
+ 
+<script src="js/d3.js"></script>
+<script src="js/crossfilter.js"></script>
+<script src="js/dc.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+
+
+<script type="text/javascript" >
+  
+  //Display boxes for demand frequencies
+  var boxND = dc.numberDisplay("#number-box");
+  var boxND1 = dc.numberDisplay("#number-box1");
+  var boxND2 = dc.numberDisplay("#number-box2");
+  var boxND3 = dc.numberDisplay("#number-box3");
+  var boxND4 = dc.numberDisplay("#number-box4");
+  var boxND5 = dc.numberDisplay("#number-box5");
+  var boxND6 = dc.numberDisplay("#number-box6");
+  var boxND7 = dc.numberDisplay("#number-box7");
+ 
+  //Display boxes for enquiry frequencies
+  var boxND8 = dc.numberDisplay("#number-box8");
+  var boxND9 = dc.numberDisplay("#number-box9");
+  var boxND10 = dc.numberDisplay("#number-box10");
+  var boxND11 = dc.numberDisplay("#number-box11");
+  var boxND12 = dc.numberDisplay("#number-box12");
+  var boxND13 = dc.numberDisplay("#number-box13");
+  var boxND14 = dc.numberDisplay("#number-box14");
+  var boxND15 = dc.numberDisplay("#number-box15");
+
+ 
+ 
+var dataset = [];
+var graticule = d3.geo.graticule();
+
+latDem= []
+Dem = []
+WA = []
+ll = []
+pval = []
+tau = []
+ipsss= []
+sass = []
+ipswrk = []
+ipstrsm = []
+ipsstudy = []
+ipsfam = []
+ipsmar= []
+ipssch = []
+ipsmed= []
+ipstrans = []
+ipssprt= []
+
+swrk = []
+strsm = []
+sstudy = []
+sfam = []
+smar= []
+ssch = []
+smed= []
+strans = []
+ssprt= []
+colorVec=[]
+countries=[]
+coloursnew=[]
+
+var width = document.getElementById('container').offsetWidth;
+var height = width / 2;
+
+projection = d3.geo.robinson()   
+    .translate([(width/2), (height/2.0)])
+    .scale( width / 2.1 / 2.98);
+    
+var WardsM = dc.geoChoroplethChart("#container");
+var industryChart = dc.rowChart("#industry-chart");
+var industryChart1 = dc.rowChart("#industry1-chart");
+var corrChart = dc.bubbleChart("#corr-chart");
+
+load = function() {
+WardsM.filterAll()
+
+
+    
+d3.csv("data/AllRanks_latest.csv", function(error, csv) {
+csv.forEach(function(d,i) {
+    d.index = i;
+    
+    //dataset.push([d.Dem, d.latDem]);	
+    
+   
+   /*dataset.push({'country':d.country,'category':"Work",'value':d.sa_work});
+   dataset.push({'country':d.country,'category':"Tourism",'value':d.sa_trsm});
+   dataset.push({'country':d.country,'category':"Study",'value':d.sa_study});
+   dataset.push({'country':d.country,'category':"Family",'value':d.sa_fam});
+   dataset.push({'country':d.country,'category':"Marriage",'value':d.sa_mar});
+   dataset.push({'country':d.country,'category':"School",'value':d.sa_sch});
+   dataset.push({'country':d.country,'category':"Transit",'value':d.sa_trans});
+   dataset.push({'country':d.country,'category':"Sport",'value':d.sa_sprt});
+   */
+   
+   
+   
+   
+    
+    	
+   latDem.push(d.latDem)
+   countries.push(d.country);
+   colorVec.push(d.colour);
+
+    pval.push(d.pval)
+    tau.push(d.tau)
+    
+    /*ipsss.push(d.ips_ss)
+    sass.push(d.sa_ss)
+    ipswrk.push(d.ips_wrk)
+    ipstrsm.push(d.ips_trsm)
+    ipsstudy.push(d.ips_study)
+    ipsfam.push(d.ips_fam)
+	ipsmar.push(d.ips_mar)
+    ipssch.push(d.ips_sch)
+    ipsmed.push(d.ips_med)
+    ipstrans.push(d.ips_trans)
+    ipssprt.push(d.ips_sprt)
+    
+    swrk.push(d.sa_wrk)
+    strsm.push(d.sa_trsm)
+    sstudy.push(d.sa_study)
+    sfam.push(d.sa_fam)
+	smar.push(d.sa_mar)
+    ssch.push(d.sa_sch)
+    smed.push(d.sa_med)
+    strans.push(d.sa_trans)
+    ssprt.push(d.sa_sprt)
+   */
+   });
+  WA.push(csv)
+
+         
+         
+ d3.json("data/world-topo-mingeo.json", function (statesJson) {
+
+/********************************************************
+*														*
+* 	Step2:	Run data through crossfilter				*
+*														*
+********************************************************/
+    var data = crossfilter(csv); 
+   
+/********************************************************
+*														*
+* 	Step3: 	Create Dimension that we'll need			*
+*														*
+********************************************************/
+
+    var country = data.dimension(function (d) {
+            return d.country;  
+        });
+
+    var countrygp = country.group().reduceSum(function (d) {
+            return d.Index;
+         });
+            // console.log(countrygp);
+         
+     var cityDimensionGroup = country.group().reduce(
+       		//add
+		function(p,v){
+			++p.count;
+			p.review_sum = v.latDem;
+			p.star_sum = v.Dem;
+			p.rad =v.index;
+			return p;
+		},
+		//remove
+		function(p,v){
+			--p.count;
+			p.review_sum = v.latDem;
+			p.star_sum = v.latDem;
+			p.rad =v.index;
+			return p;
+		},
+		//init
+		function(p,v){
+			return {count:0, review_sum: 0, star_sum: 0, review_avg: 0, star_avg: 0};
+		}
+           
+      );
+  
+    
+
+  	var overall= data.dimension(function (d) {
+    return d.DemandPop;
+   });    
+    var overallgp = overall.group();
+    
+	
+	var overall1= data.dimension(function (d) {
+    return d.LatDemPop;
+   });    
+    var overallgp1 = overall1.group();
+	
+	
+	//Filter NA's for demand row charts
+	var group = {
+   all:function () {
+    return overallgp.all().filter(function(d) {
+      return d.key != 'NA';
+    })
+   }
+};
+
+    //Filter NA's for enquires row charts
+	var group2 = {
+ 	  all:function () {
+ 	   return overallgp1.all().filter(function(d) {
+ 	   return d.key != 'NA';
+   	 })
+ 	  }
+	};
+	
+   
+   //GeoChoropleth Map
+
+   WardsM.width(width)
+         .height(height)
+         .projection(projection)
+         .dimension(country)
+         .group(countrygp)
+         .colors(colorVec)
+         .colorDomain([1,242])
+         .colorCalculator(function (d) { return d ? WardsM.colors()(d) : '#e6e6e6'; })
+ 		 .overlayGeoJson(statesJson.features, "state", function (d) {
+                        return d.properties.NAME;
+                    })
+  		 .title(function (d) {
+                        return d.key  
+                    }) ;
+		    
+		    
+	
+		    
+//Row Chart for Demand
+industryChart.width(width/2.5)
+            .height(200)
+            .margins({top: 5, left: 10, right: 10, bottom: 30})
+			.dimension(overall)
+			.group(group)
+			.ordinalColors(['#aec6cf', '  #9ab973 ','#ffc87c','#997a8d' ,' #e75480','  #af4035 ', ' #c54b8c', '#6baed6', '#6baed6', '#045a8d' ])
+			.label(function (d) {
+           	 return d.key;
+        	})
+        	.title(function (d) {
+         	   return d.key;
+       		 })
+            .renderLabel(true)
+  		    .elasticX(true)
+            .ordering(function(d) { return -d.value })
+	        .xAxis().ticks(4);
+   
+
+
+//Row Chart for Enquiries
+industryChart1.width(width/2.5)
+            .height(200)
+            .margins({top: 5, left: 10, right: 10, bottom: 30})
+			.dimension(overall1)
+			.group(group2)
+			.ordinalColors([ ' #aec6cf','#ffc87c', '   #9ab973  ','#997a8d' ,'  #af4035 ',' #ff8243', ' #65000b', '#6baed6', '#6baed6', '#045a8d' ])
+			.label(function (d) {
+           	 return d.key;
+        	})
+ 			.title(function (d) {
+          	  return d.key;
+       		 })
+         	.ordering(function(d) { return -d.value })
+			.elasticX(true)
+            .xAxis().ticks(4);
+            
+            
+ 
+//Dimensions for Correlation Chart   
+ var cordim= data.dimension(function (d) {
+    return d.tau;
+   });    
+
+         
+ var binWidth =0.0002;
+
+
+ var corgp = cordim.group(function(d){return Math.floor(d / binWidth) * binWidth;});		
+ 
+//Filter NA for correlation    
+var groupcor = {
+   all:function () {
+    return corgp.all().filter(function(d) {
+        return d.key != 0 ;
+    })
+   }
+}; 
+
+var corDimension = data.dimension(function (d) { coloursnew.push(colorVec[countries.indexOf(d.country)]);
+	 return d.country; });
+	 
+//var corGroup = corDimension.group();
+
+var corDimensionGroup = corDimension.group().reduce(
+		//add
+		function(p,v){
+			++p.count;
+			p.ind +=v.Index;
+			p.cor += v.Dem;
+			p.ct += v.latDem;
+			p.tau =v.tau;
+			p.pv =v.pval;
+			return p;
+		},
+		//remove
+		function(p,v){
+			--p.count;
+			p.ind -=v.Index;
+			p.cor -= v.Dem;
+			p.ct -= v.latDem;
+			p.tau -=v.tau;
+			p.pv =v.pval;
+			return p;
+		},
+		//init
+		function(p,v){
+			return {count:0, cor: 0, ct: 0,tau:0,pv:0,ind:0};
+		}
+	);	
+
+format=d3.format("0.00");
+
+//Correlation Chart
+corrChart.width(650)
+			.height(300)
+			.dimension(corDimension)
+			.group(corDimensionGroup)
+			.transitionDuration(1500)
+			.colors(d3.scale.ordinal().domain(["significant","not"])
+                                .range([" #cc5500","#8b8589"]))
+		
+            .colorAccessor(function(d) { 
+           		 if(d.value.pv <=0.05) 
+                		return "significant"
+            	return "not";})
+    		.x(d3.scale.linear().domain([-0.5, 1]))
+			.y(d3.scale.linear().domain([-10, 130]))
+			.r(d3.scale.linear().domain([1, 2500]))
+			.keyAccessor(function (p) {
+				return p.value.tau;
+			})
+			.valueAccessor(function (p) {
+				return p.value.ind;
+			})
+			.radiusValueAccessor(function (p) {
+				return Math.abs(p.value.tau*0.02);
+			})
+			.transitionDuration(1500)
+			.yAxisPadding(10)
+			.xAxisPadding(10)
+			.label(function (p) {
+				return p.key;
+				})
+			.title(function(p){
+			  return  "\n"+"Country: "+ p.key+"\n"+"Rank Correlation: "+ format(p.value.tau) + "\n"+"Pvalue: " + format(p.value.pv)  + "\n\n";
+			})
+			.minRadiusWithLabel(16)	
+			.renderLabel(true)
+	        .on("postRedraw", function (chart) {
+                dc.events.trigger(function () {
+                   WardsM.filter(chart.filter());
+                });
+                        })
+        
+            .on("filtered", function (chart) {
+		        dc.events.trigger(function () {
+		       WardsM.filter(chart.filter());
+		        // console.log("here");
+		        });
+		           });;
+		    
+
+
+
+//Get values for Display boxes
+var workdim = data.dimension(function (d) { 
+ return d.country; });
+
+meanSpeedGroup = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += (v.ips_work_val_perc*10)/10;// v.ips_work_val_perc;
+        	  return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.ips_work_val_perc*10)/10;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+  var average = function(d) {
+    console.log(d.tot);
+      var contHt=d.n ? d.tot / d.n : 0;
+      return Math.abs(contHt);
+  };
+   
+ 
+  var expCount = function(d) {
+      return d.n;
+  };
+  
+  
+  meanTourGroup = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot +=(v.ips_trsm_val_perc*10)/10;
+              
+            //  console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.ips_trsm_val_perc*10)/10;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+
+  meanFamGroup = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              
+              p.tot +=  (v.ips_fam_val_perc*10)/10 ;
+              
+            //  console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.ips_fam_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+
+  meanStudyGroup = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              
+              p.tot += (v.ips_study_val_perc*10)/10 ; 
+              
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+           //       console.log(p.tot);
+              p.tot -= (v.ips_study_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+  
+
+  meanMarriageGroup = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += (v.ips_mar_val_perc*10)/10;
+              
+        //      console.log(v.ips_mar_val_perc);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.ips_mar_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+
+
+  meanSportGroup = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot +=(v.ips_sprt_val_perc*10)/10;
+              
+            //  console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.ips_sprt_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+  
+  
+    meanTransitGroup = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot +=  (v.ips_trans_val_perc*10)/10 ;
+              
+            //  console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.ips_trans_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+ meanMedicalGroup = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += (v.ips_med_val_perc*10)/10 ;
+              
+           //   console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.ips_med_val_perc*10)/10 ;
+              
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+      
+
+  boxND
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanSpeedGroup);
+
+
+ boxND1
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanTourGroup);
+
+
+ boxND2
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanFamGroup);
+
+
+ boxND3
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanStudyGroup);
+
+
+ boxND4
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanMarriageGroup);
+
+
+ boxND5
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanSportGroup);
+
+
+ boxND6
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanTransitGroup);
+
+
+
+ boxND7
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanMedicalGroup);
+
+
+
+
+meanSpeedGroup1 = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += (v.sa_work_val_perc*10)/10;
+              
+            
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.sa_work_val_perc*10)/10;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+  
+  
+  meanTourGroup1 = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += (v.sa_trsm_val_perc*10)/10;
+              
+            //  console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.sa_trsm_val_perc*10)/10;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+
+  meanFamGroup1 = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              
+              p.tot += (v.sa_fam_val_perc*10)/10 ;
+              
+            //  console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.sa_fam_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+
+  meanStudyGroup1 = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              
+              p.tot += (v.sa_study_val_perc*10)/10 ; 
+              
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+           //       console.log(p.tot);
+              p.tot -= (v.sa_study_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+  
+
+  meanMarriageGroup1 = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += (v.sa_mar_val_perc*10)/10;
+              
+        //      console.log(v.ips_mar_val_perc);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.sa_mar_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+
+
+  meanSportGroup1 = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += (v.sa_sprt_val_perc*10)/10;
+              
+            //  console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.sa_sprt_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+  
+  
+    meanTransitGroup1 = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot +=  (v.sa_trans_val_perc*10)/10 ;
+              
+            //  console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.sa_trans_val_perc*10)/10 ;
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+
+ meanMedicalGroup1 = workdim.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += (v.sa_med_val_perc*10)/10 ;
+              
+           //   console.log(p.tot);
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= (v.sa_med_val_perc*10)/10 ;
+              
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+      );
+      
+
+
+  boxND8
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanSpeedGroup1);
+
+
+ boxND9
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanTourGroup1);
+
+
+ boxND10
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanFamGroup1);
+
+
+ boxND11
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanStudyGroup1);
+
+
+ boxND12
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanMarriageGroup1);
+
+
+ boxND13
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanSportGroup1);
+
+
+ boxND14
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanTransitGroup1);
+
+
+
+ boxND15
+      .formatNumber(d3.format(".2f"))
+      .valueAccessor(average)
+      .group(meanMedicalGroup1);
+
+
+
+
+
+		           
+		     dc.renderAll();
+		     
+		     
+		     function AddXAxis(chartToUpdate, displayText) {
+            chartToUpdate.svg()
+                .append("text")
+                .attr("class", "x-axis-label")
+                .attr("text-anchor", "middle")
+                .attr("font-family", "arial unicode ms")
+                .attr("font-size", "10px")
+                .attr("x", chartToUpdate.width() / 2)
+                .attr("y", chartToUpdate.height()-2)
+                .text(displayText);
+                
+        }
+        AddXAxis(industryChart1, "No. of Countries");
+        AddXAxis(industryChart, "No. of Countries");
+        //  AddXAxis(corrChart, "Rank Correlation");
+
+
+
+var graticule = d3.geo.graticule();
+
+var tooltip = d3.select("#container").append("div").attr("class", "tooltip hidden");
+
+ 
+/*
+  g.append("path")
+   .datum({type: "LineString", coordinates: [[-180, 0], [-90, 0], [0, 0], [90, 0], [180, 0]]})
+   .attr("class", "equator")
+   .attr("d", path);
+*/
+        function AddGrat(chartToUpdate) {
+         path = d3.geo.path().projection(projection);
+
+            chartToUpdate.svg()
+            .append("path")
+     		.datum(graticule)
+     		.attr("class", "graticule")
+     		.attr("d", path);
+     		chartToUpdate.svg()
+     		.append("path")
+  			.datum({type: "LineString", coordinates: [[-180, 0], [-90, 0], [0, 0], [90, 0], [180, 0]]})
+   			.attr("class", "equator")
+   			.attr("d", path);
+
+        }
+        AddGrat(WardsM);
+        
+ 
+
+        
+        });//end of json
+    
+});
+
+
+}//end of load
+
+load()
+
+ </script>   
+ 
+ </body>
+</html>

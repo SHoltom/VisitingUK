@@ -1,0 +1,1107 @@
+library(marray);#
+#myPalette <- rev(heat.colors(12))#
+#breaks2.v<-c(-1,-0.90,-0.80,-0.75,-0.5,-0.25,0,0.25,0.5,0.75,0.80,0.90,1.0);#
+#breaks2.v <- c(seq(-1,-0.01,by=0.3),0,seq(0,1,by=0.3))#
+breaks2.v <- c(-1.0,-0.65,-0.35,-0.25,-0.10,0.10,0.35,0.65,1)#
+#breaks2.v <- c(seq(-1,-0.09,by=0.2),seq(0,1,by=0.7))#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+library(marray);#
+#myPalette <- rev(heat.colors(12))#
+#breaks2.v<-c(-1,-0.90,-0.80,-0.75,-0.5,-0.25,0,0.25,0.5,0.75,0.80,0.90,1.0);#
+#breaks2.v <- c(seq(-1,-0.01,by=0.3),0,seq(0,1,by=0.3))#
+breaks2.v <- c(-1.0,-0.65,-0.35,-0.10,0.10,0.35,0.65,0.85,1)#
+#breaks2.v <- c(seq(-1,-0.09,by=0.2),seq(0,1,by=0.7))#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+data.heat
+log(data.heat)
+log(data.heat,base=2)
+log(data.heat,base=10)
+log(data.heat,base=11)
+log(data.heat,base=14)
+log(data.heat,base=24)
+log(data.heat,base=1/2)
+log(data.heat,base=100)
+log(data.heat,base=10)
+log(data.heat,base=111)
+log(data.heat,base=2)
+log(data.heat,base=3)
+log(data.heat,base=4)
+library(marray);#
+#myPalette <- rev(heat.colors(12))#
+#breaks2.v<-c(-1,-0.90,-0.80,-0.75,-0.5,-0.25,0,0.25,0.5,0.75,0.80,0.90,1.0);#
+#breaks2.v <- c(seq(-1,-0.01,by=0.3),0,seq(0,1,by=0.3))#
+breaks2.v <- c(-1.0,-0.65,-0.35,-0.10,0.10,0.35,0.65,0.85,1)#
+#breaks2.v <- c(seq(-1,-0.09,by=0.2),seq(0,1,by=0.7))#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+library(marray);#
+#myPalette <- rev(heat.colors(12))#
+#breaks2.v<-c(-1,-0.90,-0.80,-0.75,-0.5,-0.25,0,0.25,0.5,0.75,0.80,0.90,1.0);#
+#breaks2.v <- c(seq(-1,-0.01,by=0.3),0,seq(0,1,by=0.3))#
+breaks2.v <- c(-1.0,-0.85,-0.35,-0.10,0.10,0.35,0.65,0.85,1)#
+#breaks2.v <- c(seq(-1,-0.09,by=0.2),seq(0,1,by=0.7))#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+hist(data.heat)
+hist(std.heat)
+library(marray);#
+#myPalette <- rev(heat.colors(12))#
+#breaks2.v<-c(-1,-0.90,-0.80,-0.75,-0.5,-0.25,0,0.25,0.5,0.75,0.80,2.0);#
+#breaks2.v <- c(seq(-1,-0.01,by=0.3),0,seq(0,1,by=0.3))#
+breaks2.v <- c(-2.0,-1.0,-0.85,-0.35,-0.10,0.10,0.35,0.9,2)#
+#breaks2.v <- c(seq(-1,-0.09,by=0.2),seq(0,1,by=0.7))#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)
+hist(std.heat)
+max(std.heat)
+min(std.heat)
+seq(-2,2,by=0.23)
+breaks2.v <- seq(-2,2,by=0.23)#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)
+breaks2.v <- c(-2.00, -1.77, -1.54, -1.31, -1.08, -0.85, -0.62, -0.39 ,-0.16 , 0.07,0.30,0.53,0.76,0.99,1.22,1.45,1.68,1.91)#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+breaks2.v <- c(-2.00, -1.77, -1.54, -1.31, -1.08, -0.85, -0.62, -0.39 ,-0.16 , 0.07,0.30,0.53,0.76,0.99,1.45,1.68,1.91)#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+breaks2.v <- c(-2.00, -1.54, -1.31, -1.08, -0.85, -0.62, -0.39 ,-0.16 , 0.07,0.30,0.53,0.76,0.99,1.45,1.68,1.91)#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+breaks2.v <- c(-2.00, -1.54, -1.31, -1.08, -0.85,  -0.39 ,-0.16 , 0.07,0.30,0.53,0.76,0.99,1.45,1.68,1.91)#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))#
+#
+dev.off()
+breaks2.v <- c(-2.00, -1.54, -1.31, -1.08, -0.85,  -0.39 ,-0.16 , 0.07,0.30,0.53,0.76,0.99,1.45,1.68,1.91)#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+bioClite()
+biocLite("pheatmap")
+library(pheatmap)
+pheatmap(test, color = colorRampPalette(c("navy", "white", "firebrick3"))(50))
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "firebrick3"))(50))
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50))
+?pheatmap
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50),cluster_row=F)
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50),cluster_row=F,cluster_col=F)
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50),cluster_row=T,cluster_col=F)
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50),cluster_row=T,cluster_col=F,labRow=dctop[,1])
+?pheatmap
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50),cluster_row=T,cluster_col=F,treeheight_row=0)
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50),cluster_row=T,cluster_col=F,treeheight_row=0,border_color="white")
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50),cluster_row=T,cluster_col=F,treeheight_row=0,border_color="none")
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(50),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(7),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("navy", "white", "yellow"))(17),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "red"))(17),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(7),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(5),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(2),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(3),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(4),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(5),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(8),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(4),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+?pheatmap
+head(std.heat)
+head(dctop)
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]
+labs
+data <- read.table("~/Desktop/Sync/projectsmicroarray/Raisa/Differential_Expression_Analysis/Raisa_expression_SUBSET_data.txt",sep="\t",header=T,row.names=1)#
+#
+group1 <- "Cisplatin"#
+group2 <- "EGFR_siRNA.Cisplatin"#
+groupnames <- c(rep("Cisplatin",3),rep("EGFR_siRNA.Cisplatin",3),rep("EGFR",3))#
+#
+data.sel <- data[,which(groupnames==group1 | groupnames== group2)]#
+oldnames <- colnames(data.sel)#
+colnames(data.sel) <- groupnames[1:6]#
+ind <- match(rownames(dctop),rownames(data.sel))#
+data.heat <- as.matrix(data.sel[ind,])#
+#
+#order according to reference#
+ref1 <- 2#
+ref2 <- 5#
+data.heat.t<- data.heat#
+data.heat.t[,1]<- data.heat[,2]#
+data.heat.t[,2] <- data.heat[,1]#
+#
+data.heat.t[,4]<- data.heat[,5]#
+data.heat.t[,5] <- data.heat[,4]#
+data.heat <- data.heat.t#
+#data.heat <- cbind(data.heat.t[,1],data.heat.t[,4])#
+#colnames(data.heat) <- c(colnames(data.heat.t)[,1],colnames(data.heat.t)[,4])#
+library(gplots)#
+require(graphics); require(grDevices)#
+#
+rc <- heat.colors(nrow(data.heat), 1)#
+cc <- heat.colors(ncol(data.heat),1)#
+#
+#pdf("bacterial_vs_fungal_heatmap.pdf")#
+if (!require("RColorBrewer")) {#
+	install.packages("RColorBrewer")#
+	library(RColorBrewer)#
+}#
+### Show all the colour schemes available#
+#display.brewer.all()#
+library(marray);#
+#myPalette <- rev(heat.colors(12))#
+#breaks2.v<-c(-1,-0.90,-0.80,-0.75,-0.5,-0.25,0,0.25,0.5,0.75,0.80,2.0);#
+#breaks2.v <- c(seq(-1,-0.01,by=0.3),0,seq(0,1,by=0.3))#
+breaks2.v <- c(-2.0,-1.0,-0.85,-0.35,-0.10,0.10,0.35,0.9,2)#
+#breaks2.v <- c(seq(-1,-0.09,by=0.2),seq(0,1,by=0.7))#
+#
+breaks2.v <- c(-2.00, -1.54, -1.31, -1.08, -0.85,  -0.39 ,-0.16 , 0.07,0.30,0.53,0.76,0.99,1.45,1.68,1.91)#
+myPalette <- maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+#heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))#
+#
+rownames(std.heat) <- labs#
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F)
+?pheatmap
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F,fontsize = 5)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F,fontsize_row = 5)
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F,fontsize_row = 5,margins=c(0,3,2,1))
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F,fontsize_row = 5,margins=c(3,2))
+par(mar=c(0,3,2,1))
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F,fontsize_row = 5)
+par(mar=c(0,13,2,1))
+pheatmap(std.heat, color = colorRampPalette(c("blue", "white", "yellow"))(6),cluster_row=T,cluster_col=F,treeheight_row=0,border_color=F,fontsize_row = 5)
+?pheatmap
+get.gpar()
+myPalette <-colorRampPalette(c("blue", "white", "yellow"))(6) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("lateheatmap_userLIST.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+myPalette <-colorRampPalette(c("blue", "white", "yellow"))(4) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades2.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+myPalette <-colorRampPalette(c("blue", "white", "yellow"))(5) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades3.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+myPalette <-colorRampPalette(c("blue", "white", "yellow"))(7) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades3.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+myPalette <-colorRampPalette(c("red", "green"))(6) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+#pdf("heatmap_userLIST_moreshades3.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)
+myPalette <-colorRampPalette(c("red", "green"))(6) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades3.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+myPalette <-colorRampPalette(c("red", "green"))(4) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades4.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+myPalette <-colorRampPalette(c("red","yellow","green"))(6) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades4.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+myPalette <-colorRampPalette(c("red","darkyellow","darkgreen"))(6) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades4.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)
+dev.off()
+myPalette <-colorRampPalette(c("firebrick","darkgreen"))(6) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades4.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette)#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+?heatmap.2
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette,sepcolor="none")
+myPalette <-colorRampPalette(c("red","green"))(6) #maPalette(mid="white",high="blue",low="yellow",k=length(breaks2.v)-1);#
+#
+#myPalette <- rev(heat.colors(length(breaks2.v)-1))#
+#std.heat<-cbind(rowMeans(data.heat[,1:3]),rowMeans(data.heat[,4:6])) #
+std.heat <- t(scale(t(data.heat)))#
+#colnames(std.heat) <- c(colnames(data.heat.t)[1],colnames(data.heat.t)[4])#
+#
+std.heat <- std.heat[order(rowVars(std.heat[,1:3]),decreasing=T),]#
+labs <- dctop[match(rownames(std.heat),rownames(dctop)),1]#
+pdf("heatmap_userLIST_moreshades3.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette,sepcolor="none")#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette,sepcolor="none")
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette,sepcolor="none")
+pdf("heatmap_userLIST_moreshades3.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette,sepcolor="none",sepwidth=0)
+dev.off()
+?heatmap.2
+pdf("heatmap_userLIST_moreshades3.pdf",height=8,width=8)#
+par(mar=c(0,3,2,1));#
+heatmap.2(std.heat,cexRow=0.3, labRow=labs,xlab="Samples",ylab="Genes",margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  Rowv=T,density.info="none", keysize = 0.8,col=myPalette,sepcolor="none",sepwidth=c(0,0))#
+#heatmap.2(std.heat,cexRow=0.3, labRow=dctop[,1],xlab="Samples",ylab="Genes",breaks=breaks2.v,margins=c(11,11),cexCol =0.8,trace="none",dendrogram="none",Colv=NA,scale="none",  distfun = dist,hclustfun = hclust,density.info="none", keysize = 0.8,col=myPalette)#,ColSideColors=c(rep("azure",3),rep("green",3)))
+dev.off()
+pci <- read.table("~/Desktop/Sync/projectsmicroarray/Christos_Christopoulous/PCIFINAL-2_ppci.txt",sep="\t",header=T)#
+#
+colnames(pci)
+colnames(pci)#
+x <- as.numeric(as.character(pci$LT))#
+x[which(x<3000)] <- 1#
+x[which(x>=3000)] <- 2
+table(x)
+pci$AGE
+pci <- read.table("~/Desktop/Sync/projectsmicroarray/Christos_Christopoulous/PCIFINAL-2_ppci.txt",sep="\t",header=T)#
+#
+colnames(pci)#
+x <- as.numeric(as.character(pci$LT))#
+y <- as.numeric(as.character(pci$AGE))#
+length(which(x<3000 & y >=65))#
+length(which(x>=3000 & y>=65))
+gp1 <- which(x<3000 & y >=65)#
+gp2 <- which(x>=3000 & y>=65)
+gp1
+gp2
+gp1 <- x[which(x<3000 & y >=65)]#
+gp2 <- x[which(x>=3000 & y>=65)]
+gp1
+gp2
+mgp1 <- mean(gp1)#
+mgp2 <- mean(gp2)
+mgp1
+ks.test(gp1,gp2)
+fishers.test(gp1,gp2)
+mgp2
+t.test(gp1,gp2)
+pci <- read.table("~/Desktop/Sync/projectsmicroarray/Christos_Christopoulous/PCIFINAL-2_ppci.txt",sep="\t",header=T)#
+#
+colnames(pci)
+pci$SEX
+pci <- read.table("~/Desktop/Sync/projectsmicroarray/Christos_Christopoulous/PCIFINAL-2_ppci.txt",sep="\t",header=T)#
+#
+colnames(pci)#
+x <- as.numeric(as.character(pci$LT))#
+y <- as.numeric(as.character(pci$SEX))#
+length(which(x<3000 & y==1))#
+length(which(x>=3000 & y==1))
+pci <- read.table("~/Desktop/Sync/projectsmicroarray/Christos_Christopoulous/PCIFINAL-2_ppci.txt",sep="\t",header=T)#
+#
+colnames(pci)#
+x <- as.numeric(as.character(pci$LT))#
+y <- as.numeric(as.character(pci$SEX))#
+length(which(x<3000 & y==1))#
+length(which(x>=3000 & y==1))#
+gp1 <- x[which(x<3000 & y==1)]#
+gp2 <- x[which(x>=3000 & y==1)]#
+#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+pci <- read.table("~/Desktop/Sync/projectsmicroarray/Christos_Christopoulous/PCIFINAL-2_ppci.txt",sep="\t",header=T)#
+#
+colnames(pci)#
+x <- as.numeric(as.character(pci$LT))#
+y <- as.numeric(as.character(pci$AGE))#
+length(which(x<3000 & y >=65))#
+length(which(x>=3000 & y>=65))#
+gp2 <- x[which(x<3000 & y >=65)]#
+gp1 <- x[which(x>=3000 & y>=65)]#
+#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$SEX))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+pci$Asp.Bef.
+y <- as.numeric(as.character(pci$Asp.Bef.))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2
+gp1
+pci$ASP
+y <- as.numeric(as.character(pci$ASP))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+colnames(pci)
+pci$CLOP
+y <- as.numeric(as.character(pci$CLOP))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+colnames(pci)
+y <- as.numeric(as.character(pci$STAT))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$ACE))
+y
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$BB))
+y
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp1
+table(pci$BB)
+8+55
+pci$NITR
+y <- as.numeric(as.character(pci$NITR))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$CLEX))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$WARF))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+colnames(pci)
+y <- as.numeric(as.character(pci$DIPYR))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$PPI))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$NICOR))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$CCB))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$INS))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$MET))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$DM))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$SMOK))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$HTN))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$CAD))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$CRF))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$PVD))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$CVA))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$BLD))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$STEMI))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$TNK))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$TROP))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Angio))
+table(y)
+y <- as.numeric(as.character(pci$Angio))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Angio))#
+gp2 <- x[which(x<3000 & y ==2)]#
+gp1 <- x[which(x>=3000 & y==2)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Angio))#
+gp2 <- x[which(x<3000 & y ==3)]#
+gp1 <- x[which(x>=3000 & y==3)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$TIMI.Int))#
+gp2 <- x[which(x<3000 & y ==0)]#
+gp1 <- x[which(x>=3000 & y==0)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y
+pci$TIMI.Init.
+y <- as.numeric(as.character(pci$TIMI.Init))#
+gp2 <- x[which(x<3000 & y ==0)]#
+gp1 <- x[which(x>=3000 & y==0)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2 <- x[which(x<3000 & y ==2)]#
+gp1 <- x[which(x>=3000 & y==2)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2 <- x[which(x<3000 & y ==3)]#
+gp1 <- x[which(x>=3000 & y==3)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Culprit.V))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Culprit.V))#
+gp2 <- x[which(x<3000 & y ==2)]#
+gp1 <- x[which(x>=3000 & y==2)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Culprit.V))#
+gp2 <- x[which(x<3000 & y ==3)]#
+gp1 <- x[which(x>=3000 & y==3)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Culprit.V))#
+gp2 <- x[which(x<3000 & y ==4)]#
+gp1 <- x[which(x>=3000 & y==4)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Culprit.V))#
+gp2 <- x[which(x<3000 & y ==5)]#
+gp1 <- x[which(x>=3000 & y==5)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+colnames(pci)
+y <- as.numeric(as.character(pci$Balloon))#
+gp2 <- x[which(x<3000 & y ==5)]#
+gp1 <- x[which(x>=3000 & y==5)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Balloon))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$type.of.stent))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$type.of.stent))#
+gp2 <- x[which(x<3000 & y ==2)]#
+gp1 <- x[which(x>=3000 & y==2)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$TIMI.Fin))#
+gp2 <- x[which(x<3000 & y ==0)]#
+gp1 <- x[which(x>=3000 & y==0)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$TIMI.Fin))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2 <- x[which(x<3000 & y ==2)]#
+gp1 <- x[which(x>=3000 & y==2)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2 <- x[which(x<3000 & y ==3)]#
+gp1 <- x[which(x>=3000 & y==3)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$BL.))
+y
+y <- as.numeric(as.character(pci$BL.))#
+gp2 <- x[which(x<3000 & y ==0)]#
+gp1 <- x[which(x>=3000 & y==0)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$BL.))#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$BL.))#
+gp2 <- x[which(x<3000 & y ==2)]#
+gp1 <- x[which(x>=3000 & y==2)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2 <- x[which(x<3000 & y ==3)]#
+gp1 <- x[which(x>=3000 & y==3)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(REOPRO))#
+#
+gp2 <- x[which(x<3000 & y ==3)]#
+gp1 <- x[which(x>=3000 & y==3)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(REOPRO))#
+#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$REOPRO))#
+#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$Bival))#
+#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+colnames(pci)
+y <- as.numeric(as.character(pci$BIVAL))#
+#
+gp2 <- x[which(x<3000 & y ==1)]#
+gp1 <- x[which(x>=3000 & y==1)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$PTB))
+y
+y <- as.numeric(as.character(pci$PTB))/60
+y
+gp2 <- x[which(x<3000 & y >5)]#
+gp1 <- x[which(x>=3000 & y>5)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2 <- x[which(x<3000 & y <5)]#
+gp1 <- x[which(x>=3000 & y<5)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$CTB))/60#
+gp2 <- x[which(x<3000 & y >2)]#
+gp1 <- x[which(x>=3000 & y>2)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+gp2 <- x[which(x<3000 & y <2)]#
+gp1 <- x[which(x>=3000 & y<2)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$DTB))
+y
+y <- as.numeric(as.character(pci$DTB))#
+gp2 <- x[which(x<3000 & y >=45)]#
+gp1 <- x[which(x>=3000 & y>=45)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+y <- as.numeric(as.character(pci$DTB))#
+gp2 <- x[which(x<3000 & y <45)]#
+gp1 <- x[which(x>=3000 & y<45)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+pci$X1degPCI
+y <- as.numeric(as.character(pci$LEVEL))
+y
+gp2 <- x[which(x<3000 & y >50)]#
+gp1 <- x[which(x>=3000 & y>50)]#
+length(gp1)#
+length(gp2)#
+mean(gp1)#
+mean(gp2)#
+ks.test(gp1,gp2)
+dt <- read.csv("AllRanks_latest.csv",sep=",",header=T)
+head(dt)
+colnames(dt)
+dt.sa <- dt[,57:65]
+head(dt.sa)
+colSums(dt.sa)
+colSums(dt.sa)/242
+rowSum(colSums(dt.sa)/242)
+rowSums(colSums(dt.sa)/242)
+sum(colSums(dt.sa)/242)
+dt.sa <- dt[,19:27]
+head(dt.sa)
+colSums(dt.sa)
+colSums(dt.sa,na.rm=T)
+colSums(dt.sa,na.rm=T)/242
+sum(colSums(dt.sa,na.rm=T)/242)
+colnames(dt)
+dt.sa <- dt[,37:45]
+colSums(dt.sa,na.rm=T)/242
+colSums(dt.sa,na.rm=T)
